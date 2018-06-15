@@ -17,6 +17,7 @@ router.post('/', async (req, res, next) => {
 
   try {
     await page.save();
+    console.log(page.dataValues);
     res.redirect('/');
   } catch (error) {
     next(error);
