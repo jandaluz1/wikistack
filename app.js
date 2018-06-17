@@ -11,13 +11,13 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/wiki', require('./routes/wiki'));
-app.use('/user', require('./routes/user'));
+app.use('/users', require('./routes/user'));
 app.get('/', (req, res) => {
   res.send(layout(''));
 });
 
 const init = async () => {
-  await models.db.sync({ force: true });
+  await models.db.sync();
   const PORT = 1337;
   app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);

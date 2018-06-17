@@ -2,13 +2,14 @@ const html = require('html-template-tag');
 const layout = require('./layout');
 
 module.exports = () =>
-  layout(html`
+  layout(
+    html`
   <h3>Add a Page</h3>
   <hr>
   <form method="POST" action="/wiki/">
 
     <div class="form-group">
-      <label for="name" class="col-sm-2 control-label">Name</label>
+      <label for="name" class="col-sm-2 control-label">Author</label>
         <div class="col-sm-10">
           <input id="name" name="name" type="text" class="form-control"/>
         </div>
@@ -47,4 +48,5 @@ module.exports = () =>
     </div>
 
   </form>
-`);
+`
+  );
